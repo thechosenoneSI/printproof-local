@@ -1,0 +1,286 @@
+{
+  "created_at": "2026-10-18T11:12:29.764Z",
+  "runtime": "Tesseract.js 5.1.1 · English LSTM · browser WebAssembly",
+  "dataset": "8 synthetic fixtures, created for this prototype. Not a representative production accuracy estimate.",
+  "passed": 8,
+  "total": 8,
+  "runs": [
+    {
+      "id": "clean-control",
+      "pass": true,
+      "inference_ms": 546,
+      "ocr_score": 92,
+      "expected_issues": [],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 24 October 2026\nOpen 10:00 - 18:00\nEntry $12\nCall 202-555-0147\n48 River Street\nFree parking\n"
+    },
+    {
+      "id": "four-planted-errors",
+      "pass": true,
+      "inference_ms": 438,
+      "ocr_score": 91,
+      "expected_issues": [
+        "Saturday 24 October 2026",
+        "Entry $12",
+        "Call 202-555-0147",
+        "Free parking"
+      ],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "changed",
+          "severity": "critical",
+          "expected": "Saturday 24 October 2026",
+          "observed": "Saturday 25 October 2026",
+          "confidence": 95,
+          "bbox": {
+            "x0": 289,
+            "y0": 259,
+            "x1": 342,
+            "y1": 295
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        },
+        {
+          "kind": "changed",
+          "severity": "critical",
+          "expected": "Entry $12",
+          "observed": "Entry $21",
+          "confidence": 95,
+          "bbox": {
+            "x0": 203,
+            "y0": 548,
+            "x1": 284,
+            "y1": 589
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        },
+        {
+          "kind": "changed",
+          "severity": "critical",
+          "expected": "Call 202-555-0147",
+          "observed": "Call 202-555-0141",
+          "confidence": 96,
+          "bbox": {
+            "x0": 167,
+            "y0": 694,
+            "x1": 476,
+            "y1": 730
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        },
+        {
+          "kind": "missing",
+          "severity": "review",
+          "expected": "Free parking",
+          "observed": "",
+          "confidence": 93,
+          "bbox": null,
+          "reason": "This approved text was not located in the OCR. It may be missing or unreadable; verify it on the artwork."
+        }
+      ],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 25 October 2026\nOpen 10:00 - 18:00\nEntry $21\nCall 202-555-0141\n48 River Street\n"
+    },
+    {
+      "id": "changed-price",
+      "pass": true,
+      "inference_ms": 389,
+      "ocr_score": 91,
+      "expected_issues": [
+        "Entry $12"
+      ],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "changed",
+          "severity": "critical",
+          "expected": "Entry $12",
+          "observed": "Entry $21",
+          "confidence": 95,
+          "bbox": {
+            "x0": 203,
+            "y0": 548,
+            "x1": 284,
+            "y1": 589
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        }
+      ],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 24 October 2026\nOpen 10:00 - 18:00\nEntry $21\nCall 202-555-0147\n48 River Street\nFree parking\n"
+    },
+    {
+      "id": "changed-phone",
+      "pass": true,
+      "inference_ms": 387,
+      "ocr_score": 92,
+      "expected_issues": [
+        "Call 202-555-0147"
+      ],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "changed",
+          "severity": "critical",
+          "expected": "Call 202-555-0147",
+          "observed": "Call 202-555-0141",
+          "confidence": 96,
+          "bbox": {
+            "x0": 167,
+            "y0": 694,
+            "x1": 476,
+            "y1": 730
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        }
+      ],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 24 October 2026\nOpen 10:00 - 18:00\nEntry $12\nCall 202-555-0141\n48 River Street\nFree parking\n"
+    },
+    {
+      "id": "missing-line",
+      "pass": true,
+      "inference_ms": 385,
+      "ocr_score": 91,
+      "expected_issues": [
+        "Free parking"
+      ],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "missing",
+          "severity": "review",
+          "expected": "Free parking",
+          "observed": "",
+          "confidence": 93,
+          "bbox": null,
+          "reason": "This approved text was not located in the OCR. It may be missing or unreadable; verify it on the artwork."
+        }
+      ],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 24 October 2026\nOpen 10:00 - 18:00\nEntry $12\nCall 202-555-0147\n48 River Street\n"
+    },
+    {
+      "id": "changed-word",
+      "pass": true,
+      "inference_ms": 391,
+      "ocr_score": 91,
+      "expected_issues": [
+        "Free parking"
+      ],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "changed",
+          "severity": "review",
+          "expected": "Free parking",
+          "observed": "Paid parking",
+          "confidence": 95,
+          "bbox": {
+            "x0": 63,
+            "y0": 984,
+            "x1": 162,
+            "y1": 1020
+          },
+          "reason": "Possible text difference detected by OCR. Compare the highlighted area with the approved text."
+        }
+      ],
+      "text": "EE\nRIVERSIDE MAKERS MARKET\nSaturday 24 October 2026\nOpen 10:00 - 18:00\nEntry $12\nCall 202-555-0147\n48 River Street\nPaid parking\n"
+    },
+    {
+      "id": "case-spacing-control",
+      "pass": true,
+      "inference_ms": 396,
+      "ocr_score": 92,
+      "expected_issues": [],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [],
+      "text": "EE\nriverside makers market\nsaturday 24 october 2026\nopen 10:00 - 18:00\nentry $12\ncall 202-555-0147\n48 river street\nfree parking\n"
+    },
+    {
+      "id": "unreadable-control",
+      "pass": true,
+      "inference_ms": 571,
+      "ocr_score": 14,
+      "expected_issues": [],
+      "missed": [],
+      "unexpected_flags": [],
+      "findings": [
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "RIVERSIDE MAKERS MARKET",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "Saturday 24 October 2026",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "Open 10:00 - 18:00",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "Entry $12",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "Call 202-555-0147",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "48 River Street",
+          "observed": "",
+          "confidence": 14,
+          "bbox": null,
+          "reason": "OCR quality is too low to establish whether this approved text is present. Review the artwork."
+        },
+        {
+          "kind": "uncertain",
+          "severity": "review",
+          "expected": "Free parking",
+          "observed": "Free park ing",
+          "confidence": 19,
+          "bbox": {
+            "x0": 183,
+            "y0": 977,
+            "x1": 363,
+            "y1": 1049
+          },
+          "reason": "OCR confidence is below 70 for at least one word. Read this area on the artwork before deciding whether it differs."
+        }
+      ],
+      "text": "Ee\nCLAUS RAL] = SS ARAREE TN\nErinn Jd Cradny AOF\nPr ALCO « Ik 8\nEvry B02\nCeli iraiss\nNps Xner\nFree park ing\n"
+    }
+  ]
+}
